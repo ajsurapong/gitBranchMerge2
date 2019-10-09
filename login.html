@@ -9,6 +9,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnLogin").click(function () {
+                let username = $("#txtUsername").val();
+                let password = $("#txtPassword").val();
+                if (username == "user" && password == "1234") {
+                    alert("Success");
+                }
+                else {
+                    alert("Fail");
+                }
+            });
+
+            $("#btnReset").on("click", function () {
+                $("#txtUsername").val("");
+                $("#txtPassword").val("");
+            });
+        });
+    </script>
     <title>Log in</title>
 </head>
 
@@ -20,11 +39,12 @@
             <a class="nav-item nav-link" href="about.html">About</a>
         </div>
     </nav>
-    
+
     <div class="container">
         <input type="text" id="txtUsername" placeholder="Username" class="form-control my-2">
         <input type="password" id="txtPassword" placeholder="Password" class="form-control mb-2">
-        <button class="btn btn-primary">Log in</button>
+        <button id="btnLogin" class="btn btn-primary">Log in</button>
+        <button id="btnReset" class="btn btn-danger">Reset</button>
     </div>
 </body>
 
